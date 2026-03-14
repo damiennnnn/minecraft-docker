@@ -15,6 +15,9 @@ services:
       - data:/data
     deploy:
       labels:
-      - traefik.http.routers.game-hosting-minecraft-qmxeih-9-web.entrypoints=mc
+      - traefik.enable=true
+      - traefik.http.routers.mc.rule=Host(`${DOMAIN}`)
+      - traefik.http.routers.mc.entrypoints=mc
+      - traefik.http.services.mc.loadbalancer.server.port=25565
 volumes:
   data:
