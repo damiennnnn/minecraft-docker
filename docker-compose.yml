@@ -5,6 +5,8 @@ services:
     stdin_open: true
     ports:
       - "25565:25565"
+    networks:
+      - dokploy-network
     environment:
       EULA: "TRUE"
       TYPE: "PAPER"
@@ -13,3 +15,7 @@ services:
       VIEW_DISTANCE: "12"
     volumes:
       - "./data:/data"
+
+networks:
+  dokploy-network:
+    external: true
