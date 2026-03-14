@@ -13,11 +13,6 @@ services:
       VIEW_DISTANCE: "12"
     volumes:
       - data:/data
-    deploy:
-      labels:
-      - traefik.enable=true
-      - traefik.http.routers.mc.rule=Host(`${DOMAIN}`)
-      - traefik.http.routers.mc.entrypoints=mc
-      - traefik.http.services.mc.loadbalancer.server.port=25565
+
 volumes:
   data:
