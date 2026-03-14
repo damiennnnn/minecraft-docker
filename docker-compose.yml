@@ -13,6 +13,8 @@ services:
       VIEW_DISTANCE: "12"
     volumes:
       - data:/data
-
+    deploy:
+      labels:
+      - traefik.http.routers.game-hosting-minecraft-qmxeih-9-web.entrypoints=mc
 volumes:
   data:
