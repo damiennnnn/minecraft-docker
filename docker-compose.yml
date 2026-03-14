@@ -14,7 +14,10 @@ services:
       USE_AIKAR_FLAGS: "true"
       VIEW_DISTANCE: "12"
     volumes:
-      - "./data:/data"
+      - data:/data
+
+volumes:
+  data:
 
 networks:
   dokploy-network:
